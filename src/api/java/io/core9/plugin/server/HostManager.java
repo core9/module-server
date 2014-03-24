@@ -23,6 +23,12 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	VirtualHost[] getVirtualHosts();
 	
 	/**
+	 * Refresh the vhosts
+	 * @return
+	 */
+	VirtualHost[] refreshVirtualHosts();
+	
+	/**
 	 * Return the Vhosts with the hostname as index
 	 * @return
 	 */
