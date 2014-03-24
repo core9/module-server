@@ -30,11 +30,4 @@ public interface Server {
 	 */
 	void deregister(VirtualHost vhost, String pattern);
 	
-	/**
-	 * Return the virtualhosts
-	 * Use the getVirtualHosts from the hostmanager
-	 * @return
-	 */
-	@Deprecated
-	VirtualHost[] getVirtualHosts();
 }
