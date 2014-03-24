@@ -1,17 +1,21 @@
 package io.core9.plugin.server;
 
+import io.core9.core.boot.BootStrategy;
+import io.core9.core.plugin.Core9Plugin;
+import io.core9.plugin.server.handler.Middleware;
+
+import java.net.UnknownHostException;
 import java.util.Map;
 
-import io.core9.core.plugin.Core9Plugin;
-
-public interface HostManager extends Core9Plugin {
+public interface HostManager extends Core9Plugin, BootStrategy {
 	
 	/**
 	 * Add a virtualhost to the system
 	 * @param vhost
 	 * @return
+	 * @throws UnknownHostException 
 	 */
-	HostManager addVirtualHost(VirtualHost vhost);
+	HostManager addVirtualHost(VirtualHost vhost) throws UnknownHostException;
 	
 	/**
 	 * @return an array of virtualhosts
@@ -23,4 +27,10 @@ public interface HostManager extends Core9Plugin {
 	 * @return
 	 */
 	Map<String,VirtualHost> getVirtualHostsByHostname();
+	
+	/**
+	 * Return the installation procedure middleware
+	 * @return
+	 */
+	Middleware getInstallationProcedure();
 }
