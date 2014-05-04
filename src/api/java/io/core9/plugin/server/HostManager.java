@@ -35,6 +35,12 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	Map<String,VirtualHost> getVirtualHostsByHostname();
 	
 	/**
+	 * Return the server aliases
+	 * @return
+	 */
+	Map<String,String> getURLAliases();
+	
+	/**
 	 * Return the installation procedure middleware
 	 * @return
 	 */
