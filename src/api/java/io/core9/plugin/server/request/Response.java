@@ -108,4 +108,10 @@ public interface Response {
 	 * @param cookie
 	 */
 	Response addCookie(Cookie cookie);
+	
+	/**
+	 * True if the response is already sent
+	 * @return
+	 */
+	boolean isEnded();
 }
