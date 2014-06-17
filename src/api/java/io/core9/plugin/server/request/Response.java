@@ -31,13 +31,27 @@ public interface Response {
 	 * @param key
 	 * @param value
 	 */
-	void addValue(String key, Object value);
+	Response addValue(String key, Object value);
 	
 	/**
 	 * Add multiple values
 	 * @param values
 	 */
-	void addValues(Map<String,Object> values);
+	Response addValues(Map<String,Object> values);
+	
+	/**
+	 * Add a global value
+	 * @param key
+	 * @param value
+	 * @return
+	 */
+	Response addGlobal(String key, Object value);
+	
+	/**
+	 * Return the global values
+	 * @return
+	 */
+	Map<String,Object> getGlobals();
 	
 	/**
 	 * Add as server status
