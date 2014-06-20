@@ -1,8 +1,10 @@
 package io.core9.plugin.server;
 
+import io.core9.core.executor.Executor;
+import io.core9.core.plugin.Core9Plugin;
 import io.core9.plugin.server.handler.Middleware;
 
-public interface Server {
+public interface Server extends Core9Plugin, Executor {
 
 	/**
 	 * Register on a specific path
