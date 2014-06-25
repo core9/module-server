@@ -9,10 +9,14 @@ import java.util.regex.Pattern;
 
 
 public class Binding {
-	final String path;
+	private final String path;
 	final Pattern pattern;
 	final Middleware middleware;
 	final Set<String> paramNames;
+	
+	public String getPath() {
+		return path;
+	}
 	
 	public Binding(String path, Pattern pattern, Set<String> paramNames,Middleware middleware) {
 		this.path = path;
