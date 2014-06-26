@@ -1,48 +1,56 @@
 package io.core9.plugin.server;
 
-import java.util.HashMap;
 import java.util.Map;
 
-public class VirtualHost {
-	private String hostname;
-	private Map<String,Object> context;
+public interface VirtualHost {
 	
-	public String getHostname() {
-		return hostname;
-	}
+	/**
+	 * Get the hostname
+	 * @return
+	 */
+	String getHostname();
 
-	public void setHostname(String hostname) {
-		this.hostname = hostname;
-	}
+	/**
+	 * Set the hostname
+	 * @param hostname
+	 * @return
+	 */
+	VirtualHost setHostname(String hostname);
 	
-	public Map<String,Object> getContext() {
-		return this.context;
-	}
+	/**
+	 * Get the context
+	 * @return
+	 */
+	Map<String,Object> getContext();
 	
-	public void setContext(Map<String,Object> context) {
-		this.context = context;
-	}
+	/**
+	 * Set the context
+	 * @param context
+	 * @return
+	 */
+	VirtualHost setContext(Map<String,Object> context);
 	
-	@SuppressWarnings("unchecked")
-	public <R> R putContext(String name, R value) {
-		return (R) this.context.put(name, value);
-	}
+	/**
+	 * Add to the context
+	 * @param name
+	 * @param value
+	 * @return
+	 */
+	<R> R putContext(String name, R value);
 	
-	@SuppressWarnings("unchecked")
-	public <R> R getContext(String name) {
-		return (R) this.context.get(name);
-	}
+	/**
+	 * Get from the context
+	 * @param name
+	 * @return
+	 */
+	<R> R getContext(String name);
 
-	public <R> R getContext(String name, R defaultValue) {
-        if (context.containsKey(name)) {
-            return getContext(name);
-        } else {
-            return defaultValue;
-        }
-	}
+	/**
+	 * Get from the context
+	 * @param name
+	 * @param defaultValue
+	 * @return
+	 */
+	<R> R getContext(String name, R defaultValue);
 
-	public VirtualHost(String hostname) {
-		this.setHostname(hostname);
-		this.context = new HashMap<String, Object>();
-	}
 }
