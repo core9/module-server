@@ -6,6 +6,8 @@ import io.core9.plugin.server.VirtualHost;
 import java.util.List;
 import java.util.Map;
 
+import rx.Observable;
+
 public interface Request {
 
 	/**
@@ -35,17 +37,17 @@ public interface Request {
 	/**
 	 * Get the request body
 	 */
-	String getBody();
+	Observable<String> getBody();
 	
 	/**
 	 * Return the request body as a map
 	 */
-	Map<String, Object> getBodyAsMap();
+	Observable<Map<String, Object>> getBodyAsMap();
 	
 	/**
 	 * Return the request body as a list
 	 */
-	List<Object> getBodyAsList();
+	Observable<List<Object>> getBodyAsList();
 	
 	/**
 	 * Get the request context

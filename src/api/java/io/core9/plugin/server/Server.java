@@ -32,4 +32,19 @@ public interface Server extends Core9Plugin, Executor {
 	 */
 	void deregister(VirtualHost vhost, String pattern);
 	
+	/**
+	 * Create a Cookie with a value
+	 * @param name
+	 * @param value
+	 * @return
+	 */
+	Cookie newCookie(String name, String value);
+	
+	/**
+	 * Create a Cookie without a value
+	 * @param name
+	 * @return
+	 */
+	Cookie newCookie(String name);
+	
 }
