@@ -128,4 +128,11 @@ public interface Response {
 	 * @return
 	 */
 	boolean isEnded();
+	
+	/**
+	 * Sets the result as ended (meaning the handler finishes the result by itself)
+	 * @param ended
+	 */
+	void setEnded(boolean ended);
+	
 }
