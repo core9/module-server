@@ -33,6 +33,12 @@ public interface Server extends Core9Plugin, Executor {
 	void deregister(VirtualHost vhost, String pattern);
 	
 	/**
+	 * Remove a VirtualHost from the server
+	 * @param vhost
+	 */
+	void remove(VirtualHost vhost);
+	
+	/**
 	 * Create a Cookie with a value
 	 * @param name
 	 * @param value
