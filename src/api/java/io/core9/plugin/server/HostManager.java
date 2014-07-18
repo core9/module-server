@@ -15,7 +15,15 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	 * @return
 	 * @throws UnknownHostException 
 	 */
-	HostManager addVirtualHost(VirtualHost vhost) throws UnknownHostException;
+	HostManager addVirtualHost(VirtualHost vhost);
+	
+	/**
+	 * Remove a VirtualHost
+	 * @param vhost
+	 * @return
+	 * @throws UnknownHostException
+	 */
+	HostManager removeVirtualHost(VirtualHost vhost);
 	
 	/**
 	 * @return an array of virtualhosts
@@ -26,7 +34,7 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	 * Refresh the vhosts
 	 * @return
 	 */
-	VirtualHost[] refreshVirtualHosts();
+	HostManager refreshVirtualHosts();
 	
 	/**
 	 * Return the Vhosts with the hostname as index
@@ -36,8 +44,10 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	
 	/**
 	 * Return the installation procedure middleware
+	 * Should move to the Admin module, and be turned off and on on request
 	 * @return
 	 */
+	@Deprecated
 	Middleware getInstallationProcedure();
 
 	/**
@@ -47,4 +57,5 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	 * @return
 	 */
 	String getURLAlias(VirtualHost vhost, String path);
+
 }
