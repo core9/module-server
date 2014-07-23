@@ -17,6 +17,12 @@ public interface Request {
 	String getPath();
 	
 	/**
+	 * Return the source host
+	 * @return
+	 */
+	String getSourceHost();
+	
+	/**
 	 * Get all set params
 	 * @return
 	 */
