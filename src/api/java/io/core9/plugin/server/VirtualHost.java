@@ -1,8 +1,9 @@
 package io.core9.plugin.server;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public interface VirtualHost {
+public interface VirtualHost extends Serializable {
 	
 	/**
 	 * Get the hostname
