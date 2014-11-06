@@ -104,4 +104,9 @@ public interface Request {
 	 * Get the hostname
 	 */
 	String getHostname();
+	
+	/**
+	 * Get the scheme (http/https
+	 */
+	String getScheme();
 }
