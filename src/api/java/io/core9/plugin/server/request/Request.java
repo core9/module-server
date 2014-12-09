@@ -3,6 +3,7 @@ package io.core9.plugin.server.request;
 import io.core9.plugin.server.Cookie;
 import io.core9.plugin.server.VirtualHost;
 
+import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 
@@ -24,9 +25,17 @@ public interface Request {
 	
 	/**
 	 * Get all set params
+	 * @deprecated use Map<String,Deque<String>> getQueryParams();
 	 * @return
 	 */
+	@Deprecated
 	Map<String,Object> getParams();
+	
+	/**
+	 * Return all set params
+	 * @return
+	 */
+	Map<String, Deque<String>> getQueryParams();
 	
 	/**
 	 * Get the response (wrapped) object
