@@ -18,6 +18,10 @@ public class Binding {
 		return path;
 	}
 	
+	public Middleware getMiddleware() {
+		return middleware;
+	}
+	
 	public Binding(String path, Pattern pattern, Set<String> paramNames,Middleware middleware) {
 		this.path = path;
 		this.pattern = pattern;
