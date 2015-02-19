@@ -24,12 +24,10 @@ public interface Request {
 	String getSourceHost();
 	
 	/**
-	 * Get all set params
-	 * @deprecated use Map<String,Deque<String>> getQueryParams();
+	 * Get all path parameters (the middleware's path)
 	 * @return
 	 */
-	@Deprecated
-	Map<String,Object> getParams();
+	Map<String,Object> getPathParams();
 	
 	/**
 	 * Return all set params
