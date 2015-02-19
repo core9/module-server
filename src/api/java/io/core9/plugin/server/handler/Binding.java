@@ -34,7 +34,7 @@ public class Binding {
 		if(!matcher.matches()) {
 			return;
 		} else {
-			Map<String, Object> params = request.getPathParams();
+			Map<String, String> params = request.getPathParams();
 			if (this.paramNames != null) {
 				// Named params
 				for (String param : paramNames) {

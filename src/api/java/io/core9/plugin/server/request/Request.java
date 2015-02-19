@@ -27,7 +27,7 @@ public interface Request {
 	 * Get all path parameters (the middleware's path)
 	 * @return
 	 */
-	Map<String,Object> getPathParams();
+	Map<String,String> getPathParams();
 	
 	/**
 	 * Return all set params
