@@ -1,13 +1,13 @@
 package io.core9.plugin.server;
 
 import io.core9.core.boot.BootStrategy;
+import io.core9.core.executor.Executor;
 import io.core9.core.plugin.Core9Plugin;
-import io.core9.plugin.server.handler.Middleware;
 
 import java.net.UnknownHostException;
 import java.util.Map;
 
-public interface HostManager extends Core9Plugin, BootStrategy {
+public interface HostManager extends Core9Plugin, BootStrategy, Executor {
 	
 	/**
 	 * Add a virtualhost to the system
@@ -41,14 +41,6 @@ public interface HostManager extends Core9Plugin, BootStrategy {
 	 * @return
 	 */
 	Map<String,VirtualHost> getVirtualHostsByHostname();
-	
-	/**
-	 * Return the installation procedure middleware
-	 * Should move to the Admin module, and be turned off and on on request
-	 * @return
-	 */
-	@Deprecated
-	Middleware getInstallationProcedure();
 
 	/**
 	 * Return the URL alias from the vhost
