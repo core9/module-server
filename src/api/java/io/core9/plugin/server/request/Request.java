@@ -16,102 +16,110 @@ public interface Request {
 	 * @return
 	 */
 	String getPath();
-	
+
 	/**
 	 * Return the source host
 	 * @return
 	 */
 	String getSourceHost();
-	
+
 	/**
 	 * Get all path parameters (the middleware's path)
 	 * @return
 	 */
 	Map<String,String> getPathParams();
-	
+
 	/**
 	 * Return all set params
 	 * @return
 	 */
 	Map<String, Deque<String>> getQueryParams();
-	
+
+
+	/**
+	 * Get all parameters
+	 * @return
+	 */
+	Map<String,String> getParams();
+
+
 	/**
 	 * Get the response (wrapped) object
 	 * @return
 	 */
 	Response getResponse();
-	
+
 	/**
 	 * Get the request method (GET,POST,PUT etc)
 	 * @return
 	 */
 	Method getMethod();
-	
+
 	/**
 	 * Get the request body
 	 */
 	Observable<String> getBody();
-	
+
 	/**
 	 * Return the request body as a map
 	 */
 	Observable<Map<String, Object>> getBodyAsMap();
-	
+
 	/**
 	 * Return the request body as a list
 	 */
 	Observable<List<Object>> getBodyAsList();
-	
+
 	/**
 	 * Get the request context
 	 */
 	Map<String, Object> getContext();
-	
+
 	/**
 	 * Get a property from the context
 	 */
 	<R> R getContext(String name, R defaultVal);
-	
+
 	/**
 	 * Get a property from the context
 	 */
 	<R> R getContext(String name);
-	
+
 	/**
 	 * Add a property to the context
 	 */
 	<R> R putContext(String name, R value);
-	
+
 	/**
 	 * Return the virtual host
 	 */
 	VirtualHost getVirtualHost();
-	
+
 	/**
 	 * Return a cookie by name
 	 * @param name
 	 * @return
 	 */
 	Cookie getCookie(String name);
-	
+
 	/**
 	 * Return all cookies by name
 	 * @param name
 	 * @return
 	 */
 	List<Cookie> getAllCookies(String name);
-	
+
 	/**
 	 * Set the cookies
 	 * @param cookies
 	 */
 	void setCookies(List<Cookie> cookies);
-	
+
 	/**
 	 * Get the hostname
 	 */
 	String getHostname();
-	
+
 	/**
 	 * Get the scheme (http/https
 	 */
